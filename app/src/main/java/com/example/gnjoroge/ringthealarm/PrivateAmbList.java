@@ -1,6 +1,7 @@
 package com.example.gnjoroge.ringthealarm;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -26,7 +27,7 @@ public class PrivateAmbList extends AppCompatActivity {
     "Rescue Med",
     "St John Ambulance Kenya",
     "West Ambulance Services",
-    "Kenya Red Cross Society Ambulance in Kenya",
+    "Kenya Red Cross Society Ambulance",
     "The Karen Hospital",
     "Intensive Care Air Ambulance Ltd"};
 
@@ -54,15 +55,12 @@ public class PrivateAmbList extends AppCompatActivity {
     " Langata Rd, Nairobi City, Kenya",
     "Wilson Grounds, Nairobi, Kenya"};
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_private_amb_list);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
+        final ListView listView = (ListView) findViewById(R.id.listView);
 
         CustomAdapter customAdapter = new CustomAdapter();
 
@@ -99,6 +97,10 @@ public class PrivateAmbList extends AppCompatActivity {
             textView_add.setText(address[i]);
 
             return view;
+
+
         }
+
     }
+
 }
