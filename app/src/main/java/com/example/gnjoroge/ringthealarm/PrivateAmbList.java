@@ -4,16 +4,21 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+
 public class PrivateAmbList extends AppCompatActivity {
 
-    private String[] ambulances = new String[] {"AAR Insurance Kenya Ltd",
+    String[] ambulances = {"AAR Insurance Kenya Ltd",
     "AMREF Flying Doctors",
     "Avenue Rescue Services",
     "Emergency Response Services",
@@ -21,12 +26,11 @@ public class PrivateAmbList extends AppCompatActivity {
     "Rescue Med",
     "St John Ambulance Kenya",
     "West Ambulance Services",
-    "Kenya Red Cros Society Ambulance in Kenya",
-    "Road Safety Network Ambulance Service in Kenya",
+    "Kenya Red Cross Society Ambulance in Kenya",
     "The Karen Hospital",
     "Intensive Care Air Ambulance Ltd"};
 
-    private String[] phone = new String[] {"020-2717374, 254703063000",
+     String[] phone = {"020-2717374, 254703063000",
             "+254-722314239, +254-733639088",
             "+254203745750",
             "+254770111090",
@@ -35,25 +39,66 @@ public class PrivateAmbList extends AppCompatActivity {
             "+254720736591",
             "+254723445526",
             "(020)3950000",
-            "2212699",
             "+254206613000",
             "+254-206004945"};
 
-    private ListView mlistView;
+    String[] address = {"4th Ngong Ave, Williamson House, 2nd Flr, Nairobi",
+    "AMREF Flying Doctors House, Inside Wilson Airport, Nairobi",
+    "1st parklands Avenue, Nairobi",
+    "South C (Bellevue), Red Cross Road, Nairobi",
+    "Narshi House, Morkah daddah Street, Nairobi",
+    "Taveta Road, Nairobi",
+    "St John`s house, County Lane, Nairobi",
+    "Nairobi West, Nairobi",
+    "Haile Selassie Ave, Nairobi, Kenya",
+    " Langata Rd, Nairobi City, Kenya",
+    "Wilson Grounds, Nairobi, Kenya"};
 
-//    private TextView mName;
-//    private CardView mCardView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_private_amb_list);
 
-        mlistView = (ListView) findViewById(R.id.listView);
+        ListView listView = (ListView) findViewById(R.id.listView);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ambulances);
-        mlistView.setAdapter(adapter);
+        CustomAdapter customAdapter = new CustomAdapter();
 
+        listView.setAdapter(customAdapter);
+    }
 
+    class CustomAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return ambulances.length;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            view = getLayoutInflater().inflate(R.layout.custom_layout, null);
+
+            TextView textView = (TextView) view.findViewById(R.id.hospName);
+            TextView textView_add = (TextView) view.findViewById(R.id.hospAdd);
+            TextView textView_tel = (TextView) view.findViewById(R.id.hospTel);
+
+            textView.setText(ambulances[i]);
+            textView_tel.setText(phone[i]);
+            textView_add.setText(address[i]);
+
+            return view;
+        }
     }
 }
