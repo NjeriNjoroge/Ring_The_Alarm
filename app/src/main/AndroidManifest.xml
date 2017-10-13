@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AmbulanceActivity" />
+        <activity android:name=".AmbulanceActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gnjoroge.ringthealarm.MainActivity">
+            </meta-data>
+        </activity>
         <activity android:name=".PrivateAmbList"></activity>
     </application>
 
