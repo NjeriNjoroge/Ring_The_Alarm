@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gnjoroge.ringthealarm">
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,10 +22,10 @@
         <activity android:name=".AmbulanceActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.gnjoroge.ringthealarm.MainActivity">
-            </meta-data>
+                android:value="com.example.gnjoroge.ringthealarm.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".PrivateAmbList"></activity>
+        <activity android:name=".PrivateAmbList" />
+        <activity android:name=".NotifyActivity"></activity>
     </application>
 
 </manifest>

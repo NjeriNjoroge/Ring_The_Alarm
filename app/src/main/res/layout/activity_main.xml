@@ -35,7 +35,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/ic_local_hospital_white_24dp" />
+                app:srcCompat="@drawable/ambulance" />
 
             <TextView
                 android:id="@+id/textView"
@@ -85,7 +85,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/ic_person_pin_circle_black_24dp" />
+                app:srcCompat="@drawable/ice" />
 
             <TextView
                 android:id="@+id/textView1"
