@@ -2,25 +2,54 @@ package com.example.gnjoroge.ringthealarm;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class FireActivity extends AppCompatActivity {
-    private ListView mSavedFireStationsListView;
-    private String [] fireStations = new String[]{
-            "Fire Rescue and Disaster Management Department Training School","Fire Station Nairobi","Jolemac Fire Protection Ltd","Airport Fire Station","KK Security Karen",
-            "KAA Fire Station"
+    private CardView mCardView;
+    private TextView mTextViewName;
+    private TextView mTextViewLocation;
+    private TextView mTextViewContacts;
 
-    };
+    private static RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private static RecyclerView recyclerView;
+    private static ArrayList<Fire> data;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire);
 
-        mSavedFireStationsListView = (ListView)findViewById(R.id.savedFireStationsListView);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, fireStations );
-        mSavedFireStationsListView.setAdapter(adapter);
+        mCardView=(CardView) findViewById(R.id.card_view);
+        //mCardView.setOnClickListener(this);
+
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        data=new ArrayList<Fire>();
+        for(int i=0; i<3; i++){
+            data.add(new Fire(MyData.names[i],MyData.locations[i], MyData.contacts[i],MyData.images[i]));
+        }
+
+        adapter=new FireAdapter(getApplicationContext(),data);
+        recyclerView.setAdapter(adapter);
+
+
+
 
     }
+
 }

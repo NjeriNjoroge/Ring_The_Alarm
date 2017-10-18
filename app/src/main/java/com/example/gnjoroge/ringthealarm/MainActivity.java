@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button mFireButton;
+    private Button mEmergencyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,15 +17,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFireButton = (Button) findViewById(R.id.fireButton);
+        mEmergencyButton = (Button)findViewById(R.id.emergencyContacts);
 
-        mFireButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FireActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        mEmergencyButton.setOnClickListener(this);
+        mFireButton.setOnClickListener(this);
 
     }
+    @Override
+    public void onClick(View view){
+        if(view == mEmergencyButton){
+            Intent intent = new Intent(MainActivity.this, EmergencyActivity.class);
+            startActivity(intent);
+        }
+        else if(view == mFireButton){
+            Intent intent = new Intent(MainActivity.this, FireActivity.class);
+            startActivity(intent);
+        }
+    }
+
 }

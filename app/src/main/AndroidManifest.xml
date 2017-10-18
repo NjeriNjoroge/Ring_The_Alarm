@@ -16,7 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FireActivity"></activity>
+        <activity android:name=".FireActivity">
+
+        </activity>
+        <activity android:name=".EmergencyActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
