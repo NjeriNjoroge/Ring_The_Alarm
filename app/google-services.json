@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "239661954068",
+    "firebase_url": "https://ringalarm-49860.firebaseio.com",
+    "project_id": "ringalarm-49860",
+    "storage_bucket": "ringalarm-49860.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239661954068:android:d763e28c523becbe",
+        "android_client_info": {
+          "package_name": "com.example.gnjoroge.ringthealarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239661954068-2r649d1f4t07j0es2362mvfmfmkj9d3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gnjoroge.ringthealarm",
+            "certificate_hash": "872966bb60dcf154ddd4909ca20d270d5416eb6a"
+          }
+        },
+        {
+          "client_id": "239661954068-riv8deuipbu4qb5pfnd0b0t25vk0t5ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB50qa5ChFOU4aPO4HZLPnBRNqcNyHbmMc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239661954068-riv8deuipbu4qb5pfnd0b0t25vk0t5ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
