@@ -8,19 +8,27 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static android.R.attr.permission;
+
 
 public class AmbulanceActivity extends AppCompatActivity {
 
-    @Bind(R.id.selectAmb) Button mSelectAmb;
-    @Bind(R.id.sendSms) Button mSendSms;
+    @Bind(R.id.selectAmb)
+    Button mSelectAmb;
+    @Bind(R.id.sendSms)
+    Button mSendSms;
+
+    static final Integer CALL = 0x2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +47,13 @@ public class AmbulanceActivity extends AppCompatActivity {
 
     }
 
-    //calling 911 by clicking the ambulance button
     public void call_onClick(View view) {
-        String num = "911";
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + num));
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:911"));
 
-
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
         startActivity(intent);
     }
+
 
 }
 
