@@ -29,14 +29,14 @@ public class FireAdapter extends RecyclerView.Adapter<FireAdapter.FireView> {
         ImageView fireImage;
         TextView stationName;
         TextView stationLocation;
-        TextView stationContacts;
+//        TextView stationContacts;
 
         public FireView(View view) {
             super(view);
             this.fireImage = (ImageView) itemView.findViewById(R.id.imageView);
             this.stationName = (TextView) itemView.findViewById(R.id.textViewName);
             this.stationLocation = (TextView) itemView.findViewById(R.id.textViewLocation);
-            this.stationContacts = (TextView) itemView.findViewById(R.id.textViewContact);
+//            this.stationContacts = (TextView) itemView.findViewById(R.id.textViewContact);
             view.setOnClickListener(this);
         }
         @Override
@@ -64,12 +64,12 @@ public void onBindViewHolder(final FireView holder, final int listPosition) {
         ImageView fireImage = holder.fireImage;
         TextView stationName = holder.stationName;
         TextView stationLocation = holder.stationLocation;
-        TextView stationContacts = holder.stationContacts;
+//        TextView stationContacts = holder.stationContacts;
 
         fireImage.setImageResource(fireData.get(listPosition).getImage());
         stationName.setText(fireData.get(listPosition).getName());
         stationLocation.setText(fireData.get(listPosition).getLocation());
-     stationContacts.setText(fireData.get(listPosition).getContact());
+//     stationContacts.setText(fireData.get(listPosition).getContact());
 
     }
 

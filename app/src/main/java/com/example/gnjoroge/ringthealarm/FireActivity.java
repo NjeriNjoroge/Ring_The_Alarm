@@ -59,7 +59,7 @@ public class FireActivity extends AppCompatActivity {
 
         data=new ArrayList<Fire>();
         for(int i=0; i<3; i++){
-            data.add(new Fire(MyData.names[i],MyData.locations[i], MyData.contacts[i],MyData.images[i]));
+            data.add(new Fire(MyData.names[i],MyData.locations[i],MyData.images[i]));
         }
 
         adapter=new FireAdapter(getApplicationContext(),data);
