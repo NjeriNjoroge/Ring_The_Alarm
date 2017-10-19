@@ -5,18 +5,21 @@ package com.example.gnjoroge.ringthealarm;
  */
 
 public class Fire {
+    private int image;
     private String name;
     private String location;
-    private int contacts;
+//    private String contact;
 
     public Fire(){
     }
-    public Fire(String name, String location, int contacts){
+    public Fire(String name, String location,  int image){
+        this.image = image;
         this.name=name;
         this.location= location;
-        this.contacts = contacts;
+//        this.contact = contact;
     }
+    public int getImage(){ return image;}
     public String getName(){ return name;}
     public String getLocation(){ return location;}
-    public int getContacts(){ return contacts;}
+//    public String getContact(){ return contact;}
 }
