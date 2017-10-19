@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gnjoroge.ringthealarm">
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.DI" />
@@ -24,15 +25,18 @@
         <activity android:name=".PrivateAmbList" />
         <activity android:name=".NotifyActivity" />
         <activity android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/SplashTheme"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".FireActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gnjoroge.ringthealarm.MainActivity">
+
+            </meta-data>
 
         </activity>
-        <activity android:name=".FireActivity"></activity>
+
+
     </application>
 
 </manifest>

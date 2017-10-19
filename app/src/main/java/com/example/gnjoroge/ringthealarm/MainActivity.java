@@ -8,15 +8,21 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
 public class MainActivity extends AppCompatActivity {
 
+//public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+
     @Bind(R.id.card_view1) CardView mAmbulance;
     @Bind(R.id.card_view2) CardView mIce;
+
     private Button mFireButton;
+//    private Button mEmergencyButton;
 
 
     @Override
@@ -27,11 +33,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         mFireButton = (Button) findViewById(R.id.fireButton);
+//        mEmergencyButton = (Button)findViewById(R.id.emergencyContacts);
+
 
         mFireButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, FireActivity.class);
+
+
+//        mEmergencyButton.setOnClickListener(this);
+        mFireButton.setOnClickListener(this);
 
 
                 mAmbulance.setOnClickListener(new View.OnClickListener() {
@@ -55,4 +67,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+//    @Override
+//    public void onClick(View view){
+//        if(view == mFireButton){
+//            Intent intent = new Intent(MainActivity.this, FireActivity.class);
+//            startActivity(intent);
+//        }
+////        else if(view == mFireButton){
+////            Intent intent = new Intent(MainActivity.this, FireActivity.class);
+////            startActivity(intent);
+////        }
+//    }
+
 }
