@@ -26,33 +26,35 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        mFireButton = (Button) findViewById(R.id.fireButton);
-
-        mFireButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FireActivity.class);
-
-
-                mAmbulance.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, AmbulanceActivity.class);
-
-                        startActivity(intent);
-                    }
-                });
+//    mFireButton = (Button) findViewById(R.id.fireButton);
+//
+//    mFireButton.setOnClickListener(new View.OnClickListener() {
+//    @Override
+//    public void onClick(View view) {
+//        Intent intent = new Intent(MainActivity.this, FireActivity.class);
+//        startActivity(intent);
+//    }
 
 
-                mIce.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
-                        startActivity(intent);
-                    }
-                });
+    mAmbulance.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, AmbulanceActivity.class);
 
-            }
-        });
+            startActivity(intent);
+        }
+    });
+
+
+    mIce.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
+            startActivity(intent);
+        }
+    });
+
     }
+//    });
+//    }
 }
