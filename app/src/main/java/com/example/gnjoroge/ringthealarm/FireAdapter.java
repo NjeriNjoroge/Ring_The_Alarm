@@ -1,6 +1,8 @@
 package com.example.gnjoroge.ringthealarm;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,8 +40,10 @@ public class FireAdapter extends RecyclerView.Adapter<FireAdapter.FireView> {
             view.setOnClickListener(this);
         }
         @Override
-        public void onClick(View v){
-//            Toast.makeText(FireActivity.this, "nice", Toast.LENGTH_LONG).show();
+        public void onClick(View args0){
+            Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+            phoneIntent.setData(Uri.parse("tel:020-23344559"));
+            itemView.getContext().startActivity(phoneIntent);
         }
     }
 
