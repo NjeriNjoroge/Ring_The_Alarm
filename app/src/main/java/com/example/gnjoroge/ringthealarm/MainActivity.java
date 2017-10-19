@@ -14,10 +14,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.card_view1)
-    CardView mAmbulance;
-    @Bind(R.id.card_view2)
-    CardView mIce;
+    @Bind(R.id.card_view1) CardView mAmbulance;
+    @Bind(R.id.card_view2) CardView mIce;
     private Button mFireButton;
 
 
