@@ -15,17 +15,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-//public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
-
     @Bind(R.id.card_view1)
     CardView mAmbulance;
     @Bind(R.id.card_view2)
     CardView mIce;
-
-    private Button mFireButton;
-//    private Button mEmergencyButton;
-
+    @Bind(R.id.fireButton)
+    CardView mFireButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +29,13 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-//    mFireButton = (Button) findViewById(R.id.fireButton);
-//
-//    mFireButton.setOnClickListener(new View.OnClickListener() {
-//    @Override
-//    public void onClick(View view) {
-//        Intent intent = new Intent(MainActivity.this, FireActivity.class);
-//        startActivity(intent);
-//    }
+        mFireButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FireActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         mAmbulance.setOnClickListener(new View.OnClickListener() {
@@ -62,56 +56,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-//    });
-//    }
-
-        mFireButton = (Button) findViewById(R.id.fireButton);
-//        mEmergencyButton = (Button)findViewById(R.id.emergencyContacts);
-
-
-        mFireButton.setOnClickListener(new View.OnClickListener() {
+        mAmbulance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FireActivity.class);
+                Intent intent = new Intent(MainActivity.this, AmbulanceActivity.class);
 
-
-//        mEmergencyButton.setOnClickListener(this);
-                mFireButton.setOnClickListener(this);
-
-
-                mAmbulance.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, AmbulanceActivity.class);
-
-                        startActivity(intent);
-                    }
-                });
-
-
-                mIce.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
-                        startActivity(intent);
-                    }
-                });
-
+                startActivity(intent);
             }
         });
+
+
+        mIce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 }
-//    @Override
-//    public void onClick(View view){
-//        if(view == mFireButton){
-//            Intent intent = new Intent(MainActivity.this, FireActivity.class);
-//            startActivity(intent);
-//        }
-////        else if(view == mFireButton){
-////            Intent intent = new Intent(MainActivity.this, FireActivity.class);
-////            startActivity(intent);
-////        }
-//    }
 
 
