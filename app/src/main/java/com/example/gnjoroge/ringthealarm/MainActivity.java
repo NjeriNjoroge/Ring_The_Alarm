@@ -13,7 +13,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 //public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -67,16 +67,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-//    @Override
-//    public void onClick(View view){
-//        if(view == mFireButton){
+    @Override
+    public void onClick(View view){
+        if(view == mFireButton){
+            Intent intent = new Intent(MainActivity.this, FireActivity.class);
+            startActivity(intent);
+        }
+//        else if(view == mFireButton){
 //            Intent intent = new Intent(MainActivity.this, FireActivity.class);
 //            startActivity(intent);
 //        }
-////        else if(view == mFireButton){
-////            Intent intent = new Intent(MainActivity.this, FireActivity.class);
-////            startActivity(intent);
-////        }
-//    }
+    }
 
 }
