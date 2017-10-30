@@ -12,8 +12,8 @@
         android:id="@+id/card_view1"
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="26dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="1dp"
         card_view:layout_margin="5dp"
@@ -30,7 +30,7 @@
             <ImageView
                 android:id="@+id/ambulance"
                 android:layout_width="170dp"
-                android:layout_height="108dp"
+                android:layout_height="50dp"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
@@ -57,11 +57,9 @@
         android:layout_marginRight="10dp"
         android:id="@+id/card_view2"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/card_view1"
-        android:layout_alignLeft="@+id/card_view1"
-        android:layout_alignStart="@+id/card_view1"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         app:cardBackgroundColor="#9dddd7">
 
 
@@ -73,7 +71,7 @@
             <ImageView
                 android:id="@+id/notify"
                 android:layout_width="170dp"
-                android:layout_height="108dp"
+                android:layout_height="50dp"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
@@ -98,35 +96,33 @@
             <android.support.v7.widget.CardView
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:id="@+id/card_view3"
+                android:id="@+id/fireButton"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:layout_below="@+id/card_view2"
-                android:layout_alignLeft="@+id/card_view2"
-                android:layout_alignStart="@+id/card_view2"
-                android:layout_marginTop="28dp"
-                app:cardBackgroundColor="#9dddd7">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="#F57C00">
 
                 <LinearLayout
                     android:layout_width="343dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/fireButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fire" />
+                    <!--<Button-->
+                        <!--android:id="@+id/fireButton"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Fire" />-->
 
                     <ImageView
                         android:id="@+id/image"
                         android:layout_width="170dp"
-                        android:layout_height="108dp"
+                        android:layout_height="50dp"
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center"
                         android:layout_marginBottom="30dp"
                         android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/ice" />
+                        app:srcCompat="@drawable/fire" />
 
                     <TextView
                         android:id="@+id/textView2"
@@ -135,7 +131,7 @@
                         android:layout_marginLeft="120dp"
                         android:layout_marginRight="50dp"
                         android:gravity="center"
-                        android:text="I.C.E"
+                        android:text="FIRE"
                         android:textColor="@android:color/white"
                         android:textSize="30dp" />
 

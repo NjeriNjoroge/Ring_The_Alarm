@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
@@ -28,11 +29,15 @@ import butterknife.ButterKnife;
 
 public class NotifyActivity extends AppCompatActivity {
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
     ArrayList<String> contactList;
 
     private static final int RESULT_PICK_CONTACT = 50;
 
     @Bind(R.id.button) Button mSelect;
+    @Bind(R.id.saveContact) Button mSaveContact;
     @Bind(R.id.contactName) TextView mName;
     @Bind(R.id.contactNum) TextView mNum;
 
@@ -44,7 +49,6 @@ public class NotifyActivity extends AppCompatActivity {
     }
 
     public void pickContact(View v) {
-
 
         Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
         startActivityForResult(contactPickerIntent, RESULT_PICK_CONTACT);
@@ -96,6 +100,21 @@ public class NotifyActivity extends AppCompatActivity {
         contactList.add(mName.toString());
     }
 
+    public void onClick(View v) {
+
+        if(v == mSaveContact) {
+
+            String contact = mName.getText().toString();
+            addToSharedPreferences(contact);
+            Intent intent = new Intent(NotifyActivity.this, ContactsList.class);
+            startActivity(intent);
+        }
+    }
+
+    private void addToSharedPreferences(String contact) {
+
+        mEditor.putString(Constants.PREFERENCES_CONTACT_KEY, contact).apply();
+    }
 
 
 }
