@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gnjoroge.ringthealarm">
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.DI" />
 
@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".AmbulanceActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -21,40 +21,53 @@
         </activity>
         <activity android:name=".PrivateAmbList" />
         <activity android:name=".NotifyActivity" />
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <!--<activity-->
-            <!--android:name=".SplashActivity"-->
-            <!--android:theme="@style/SplashTheme">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <!-- <activity -->
+        <!-- android:name=".SplashActivity" -->
+        <!-- android:theme="@style/SplashTheme"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-        <!--<activity android:name=".FireActivity" />-->
-        <activity android:name=".ContactsList"></activity>
 
-        <!--<activity android:name=".SplashActivity"-->
-            <!--android:theme="@style/SplashTheme"/>-->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity android:name=".FireActivity" /> -->
+        <activity android:name=".ContactsList" />
+
+        <!-- <activity android:name=".SplashActivity" -->
+        <!-- android:theme="@style/SplashTheme"/> -->
 
         <activity android:name=".FireActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.gnjoroge.ringthealarm.MainActivity">
-
-            </meta-data>
-
+                android:value="com.example.gnjoroge.ringthealarm.MainActivity"></meta-data>
         </activity>
 
+        <receiver android:name="layout.RingAlarmActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/ring_alarm_activity_info" />
+        </receiver>
+
+        <activity android:name="layout.RingAlarmActivityConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

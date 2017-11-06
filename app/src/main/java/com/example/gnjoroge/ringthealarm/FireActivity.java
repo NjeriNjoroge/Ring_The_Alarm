@@ -41,7 +41,7 @@ public class FireActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0){
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:911"));
+                callIntent.setData(Uri.parse("tel:999"));
 
                 startActivity(callIntent);
             }

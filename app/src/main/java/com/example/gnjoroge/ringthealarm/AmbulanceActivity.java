@@ -49,7 +49,7 @@ public class AmbulanceActivity extends AppCompatActivity {
 
     public void call_onClick(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:911"));
+        intent.setData(Uri.parse("tel:999"));
 
         startActivity(intent);
     }
