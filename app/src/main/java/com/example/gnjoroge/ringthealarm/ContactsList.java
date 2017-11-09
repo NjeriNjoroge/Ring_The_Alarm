@@ -52,7 +52,7 @@ public class ContactsList extends AppCompatActivity {
                 display += (i+1)+". "+selectedContacts.get(i).toString()+"\n";
 
             }
-            contactsDisplay.setText("Selected Contacts : \n\n"+display);
+            contactsDisplay.setText("ICE contacts : \n\n"+display);
 
         }
 

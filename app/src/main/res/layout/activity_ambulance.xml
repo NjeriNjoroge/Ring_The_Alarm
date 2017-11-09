@@ -3,44 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="#d50000"
+    android:id="@+id/linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gnjoroge.ringthealarm.AmbulanceActivity">
 
-    <Button
-        android:id="@+id/SOSbutton"
-        android:onClick="call_onClick"
-        android:layout_gravity="center"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@drawable/roundedbutton"
-        android:text="Ambulance"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
 
-        <Button
+        <ImageView
+            android:id="@+id/imageView2"
+            android:onClick="call_onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/selectAmb"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/selectAmb"
+            android:layout_marginTop="17dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/test" />
+
+
+        <ImageView
             android:id="@+id/selectAmb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Private Ambulance"
-            android:layout_marginTop="34dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView2"
+            android:layout_marginLeft="17dp"
+            android:layout_marginStart="17dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ambulance1" />
 
-        <Button
-            android:id="@+id/sendSms"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ICE Contact"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_above="@+id/selectAmb"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:paddingRight="10dp"
+            android:text="Direct call 999"
+            android:textColor="#ffff"
+            android:textSize="20dp" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:paddingRight="10dp"
+            android:text="Private Ambulance"
+            android:textColor="#ffff"
+            android:textSize="20dp"
+            android:layout_alignBottom="@+id/selectAmb"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <!--<Button-->
+        <!--android:id="@+id/selectAmb1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="11dp"-->
+        <!--android:text="Private Ambulance"-->
+        <!--android:layout_below="@+id/imageView2"-->
+        <!--android:layout_centerHorizontal="true" />-->
     </RelativeLayout>
+
 
 </LinearLayout>

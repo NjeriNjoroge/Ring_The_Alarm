@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import butterknife.Bind;
@@ -23,12 +25,10 @@ import static android.R.attr.permission;
 
 public class AmbulanceActivity extends AppCompatActivity {
 
-    @Bind(R.id.selectAmb)
-    Button mSelectAmb;
-    @Bind(R.id.sendSms)
-    Button mSendSms;
+    @Bind(R.id.selectAmb) ImageView mSelectAmb;
 
-    static final Integer CALL = 0x2;
+
+       static final Integer CALL = 0x2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,8 @@ public class AmbulanceActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     public void call_onClick(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL);

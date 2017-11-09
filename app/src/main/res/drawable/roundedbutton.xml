@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="false">
-        <shape android:shape="rectangle">
-            <corners android:radius="1000dp" />
-            <solid android:color="#ff0000" />
-            <stroke
-                android:width="2dip"
-                android:color="#ff0000" />
-            <padding
-                android:bottom="8dp"
-                android:left="8dp"
-                android:right="8dp"
-                android:top="8dp" />
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#ff0000"/>
         </shape>
     </item>
-    <item android:state_pressed="true">
-        <shape android:shape="rectangle">
-            <corners android:radius="1000dp" />
-            <solid android:color="#3AA76D" />
-            <stroke
-                android:width="2dip"
-                android:color="#03ae3c" />
-            <padding
-                android:bottom="8dp"
-                android:left="8dp"
-                android:right="8dp"
-                android:top="8dp" />
-        </shape>
-    </item>
-</selector>
+    <item
+        android:drawable="@drawable/alarm"
+        android:bottom="20dp"
+        android:left="20dp"
+        android:right="20dp"
+        android:top="20dp"/>
+</layer-list>
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<item android:state_pressed="false">-->
+        <!--<shape android:shape="rectangle">-->
+            <!--<corners android:radius="1000dp" />-->
+            <!--<solid android:color="#ff0000" />-->
+            <!--<stroke-->
+                <!--android:width="2dip"-->
+                <!--android:color="#ff0000" />-->
+            <!--<padding-->
+                <!--android:bottom="8dp"-->
+                <!--android:left="8dp"-->
+                <!--android:right="8dp"-->
+                <!--android:top="8dp" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--<item android:state_pressed="true">-->
+        <!--<shape android:shape="rectangle">-->
+            <!--<corners android:radius="1000dp" />-->
+            <!--<solid android:color="#3AA76D" />-->
+            <!--<stroke-->
+                <!--android:width="2dip"-->
+                <!--android:color="#03ae3c" />-->
+            <!--<padding-->
+                <!--android:bottom="8dp"-->
+                <!--android:left="8dp"-->
+                <!--android:right="8dp"-->
+                <!--android:top="8dp" />-->
+        <!--</shape>-->
+    <!--</item>-->
+<!--</selector>-->

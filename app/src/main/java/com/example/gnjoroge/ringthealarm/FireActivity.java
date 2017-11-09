@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,14 +30,14 @@ public class FireActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
     private static ArrayList<Fire> data;
-    private Button button;
+    private ImageView button;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire);
-        button = (Button) findViewById(R.id.fireEmergencyButton);
+        button = (ImageView) findViewById(R.id.fireEmergencyButton);
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0){

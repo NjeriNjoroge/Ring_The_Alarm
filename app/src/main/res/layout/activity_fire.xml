@@ -2,23 +2,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#a1887f"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.gnjoroge.ringthealarm.FireActivity">
 
-    <Button
+    <!--<Button-->
+        <!--android:id="@+id/fireEmergencyButton"-->
+        <!--android:layout_width="414dp"-->
+        <!--android:layout_height="94dp"-->
+        <!--android:text="Fire"-->
+        <!--android:textSize="36sp" />-->
+
+    <ImageView
         android:id="@+id/fireEmergencyButton"
-        android:layout_width="414dp"
-        android:layout_height="94dp"
-        android:text="Fire"
-        android:textSize="36sp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/selectAmb"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/selectAmb"
+        android:layout_marginTop="17dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:paddingLeft="10dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/red" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="350dp"
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Direct call 999" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
+        android:textColor="#ffff"
         />
 
 </LinearLayout>
