@@ -90,7 +90,7 @@ public class PrivateAmbList extends AppCompatActivity {
 
             TextView textView = (TextView) view.findViewById(R.id.hospName);
             TextView textView_add = (TextView) view.findViewById(R.id.hospAdd);
-            TextView textView_tel = (TextView) view.findViewById(R.id.hospTel);
+            TextView textView_tel = (TextView) view.findViewById(R.id.hospNum);
 
             textView.setText(ambulances[i]);
             textView_tel.setText(phone[i]);

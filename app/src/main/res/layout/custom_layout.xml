@@ -22,7 +22,7 @@
         android:layout_marginTop="23dp" />
 
     <TextView
-        android:id="@+id/hospTel"
+        android:id="@+id/hospNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="46dp"
@@ -33,5 +33,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:onClick="call"/>
+        />
+        <!--//android:onClick="call"/>-->
 </RelativeLayout>

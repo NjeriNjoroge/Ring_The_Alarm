@@ -13,6 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         >
 
 
@@ -25,9 +26,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/selectAmb"
             android:layout_marginTop="17dp"
+            android:layout_marginBottom="20dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/test" />
+            app:srcCompat="@drawable/red1" />
 
 
         <ImageView
@@ -41,7 +43,7 @@
             android:layout_marginStart="17dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/ambulance1" />
+            app:srcCompat="@drawable/ambulance2" />
 
         <TextView
             android:id="@+id/textView2"

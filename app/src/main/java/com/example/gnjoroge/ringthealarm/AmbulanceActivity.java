@@ -27,7 +27,6 @@ public class AmbulanceActivity extends AppCompatActivity {
 
     @Bind(R.id.selectAmb) ImageView mSelectAmb;
 
-
        static final Integer CALL = 0x2;
 
     @Override
@@ -47,15 +46,12 @@ public class AmbulanceActivity extends AppCompatActivity {
 
     }
 
-
-
     public void call_onClick(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:999"));
 
         startActivity(intent);
     }
-
 
 }
 
