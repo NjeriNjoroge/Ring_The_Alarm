@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
@@ -17,15 +18,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+
+
 
 import static android.R.attr.permission;
 
 
 public class AmbulanceActivity extends AppCompatActivity {
 
-    @Bind(R.id.selectAmb) ImageView mSelectAmb;
+    private ImageView mSelectAmb;
 
        static final Integer CALL = 0x2;
 
@@ -33,7 +34,9 @@ public class AmbulanceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ambulance);
-        ButterKnife.bind(this);
+
+        mSelectAmb = (ImageView) findViewById(R.id.selectAmb);
+
 
         mSelectAmb.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,26 +13,31 @@ import android.widget.Button;
 
 import java.io.IOException;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @Bind(R.id.topLeftOuter) Button mAmbulance;
-    @Bind(R.id.bottomRightOuter) Button mIce;
-    @Bind(R.id.bottomLeftOuter) Button mFireButton;
-    @Bind(R.id.topRightOuter) Button mRing;
+
+public class MainActivity extends AppCompatActivity {
+
+    private Button mAmbulance;
+    private Button mIce;
+    private Button mFire;
+    private Button mAlarm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+        mAmbulance = (Button) findViewById(R.id.topLeftOuter);
+        mIce = (Button) findViewById(R.id.bottomRightOuter);
+        mFire = (Button) findViewById(R.id.bottomLeftOuter);
+        mAlarm = (Button) findViewById(R.id.topRightOuter);
+
 
         //actual alarm rings
         final MediaPlayer mp = new MediaPlayer();
-        mRing.setOnClickListener(new View.OnClickListener() {
+        mAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mp.isPlaying()) {
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 //intents to the various activities in the app
-        mFireButton.setOnClickListener(new View.OnClickListener() {
+        mFire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, FireActivity.class);
@@ -81,36 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        mAmbulance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AmbulanceActivity.class);
-
-                startActivity(intent);
-            }
-        });
-
-
-        mIce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ContactsList.class);
-                startActivity(intent);
-            }
-        });
 
     }
-    @Override
-    public void onClick(View view){
-        if(view == mFireButton){
-            Intent intent = new Intent(MainActivity.this, FireActivity.class);
-            startActivity(intent);
-        }
-//        else if(view == mFireButton){
-//            Intent intent = new Intent(MainActivity.this, FireActivity.class);
-//            startActivity(intent);
-//        }
-    }
+
 
 
 }
